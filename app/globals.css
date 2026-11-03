@@ -1,0 +1,362 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+    background: #f5efe6;
+    color: #2c1f14;
+    --store-background: #f2e8d9;
+    --store-surface: #fdf8f2;
+    --store-border: #e8d9c4;
+    --accent: #c6f36b;
+    --accent-dark: #9cc94d;
+    --ink: #2c1f14;
+    font-family: 'Geist Sans', Arial, Helvetica, sans-serif;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    min-height: 100vh;
+    background:
+      radial-gradient(ellipse at 8% 6%, rgb(210 180 140 / 18%), transparent 32rem),
+      radial-gradient(ellipse at 92% 80%, rgb(188 152 110 / 12%), transparent 28rem),
+      radial-gradient(ellipse at 50% 50%, rgb(245 235 220 / 40%), transparent 60rem),
+      var(--store-background);
+  }
+}
+
+/* ─── Scrollbar ─────────────────────────────────── */
+.scrollbar-hidden {
+  scrollbar-width: none;
+}
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
+
+@supports (font: -apple-system-body) and (-webkit-appearance: none) {
+  img[loading='lazy'] {
+    clip-path: inset(0.6px);
+  }
+}
+
+/* ─── Focus ring ─────────────────────────────────── */
+a,
+input,
+button {
+  @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#9cc94d] focus-visible:ring-offset-2 focus-visible:ring-offset-[#f2f5f0];
+}
+
+/* ═══════════════════════════════════════════════════
+   ANIMATIONS
+═══════════════════════════════════════════════════ */
+
+/* Promo marquee */
+@keyframes promo-marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.promo-marquee-track {
+  animation: promo-marquee 24s linear infinite;
+}
+.promo-marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* Floating badge */
+@keyframes promo-float {
+  0%, 100% { transform: translateY(0) rotate(6deg); }
+  50%       { transform: translateY(-8px) rotate(2deg); }
+}
+.promo-float {
+  animation: promo-float 3.5s ease-in-out infinite;
+}
+
+/* Fade in up — used on hero text and section headers */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-up {
+  animation: fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.animate-fade-up-1 { animation-delay: 0.05s; }
+.animate-fade-up-2 { animation-delay: 0.18s; }
+.animate-fade-up-3 { animation-delay: 0.30s; }
+.animate-fade-up-4 { animation-delay: 0.45s; }
+
+/* Shimmer sweep (used on CTA buttons) */
+@keyframes shimmer-sweep {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+.btn-shimmer {
+  background-size: 200% auto;
+  background-image: linear-gradient(
+    105deg,
+    #c6f36b 0%,
+    #e2fa9b 38%,
+    #c6f36b 55%,
+    #b4e055 100%
+  );
+  animation: shimmer-sweep 3s linear infinite;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.btn-shimmer:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(198, 243, 107, 0.5);
+}
+
+/* Dark CTA shimmer */
+.btn-dark-shimmer {
+  background-image: linear-gradient(105deg, #172c27 0%, #2a4a3e 45%, #172c27 100%);
+  background-size: 200% auto;
+  animation: shimmer-sweep 4s linear infinite;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.btn-dark-shimmer:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(23, 44, 39, 0.45);
+}
+
+/* Pulse ring — hero live indicator */
+@keyframes pulse-ring {
+  0%        { transform: scale(0.85); opacity: 1; }
+  80%, 100% { transform: scale(2.4);  opacity: 0; }
+}
+.pulse-dot {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.pulse-dot::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  background: #c6f36b;
+  animation: pulse-ring 1.8s ease-out infinite;
+}
+
+/* Gradient text */
+.gradient-text-hero {
+  background: linear-gradient(140deg, #ffffff 0%, #d4f88e 65%, #c6f36b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── Product card glow ────────────────────────── */
+.card-glow {
+  transition: box-shadow 0.35s ease, transform 0.35s ease;
+  border-radius: 12px;
+}
+.card-glow:hover {
+  box-shadow:
+    0 24px 56px rgba(23, 44, 39, 0.13),
+    0 0 0 1.5px rgba(198, 243, 107, 0.3);
+  transform: translateY(-5px);
+}
+
+/* ─── Section reveal ────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity  0.75s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+/* Before JS loads (SSR / no-JS): show everything immediately */
+html:not(.js-loaded) .reveal {
+  opacity: 1;
+  transform: none;
+  transition: none;
+}
+
+/* ─── Section fade-in (no JS needed) ───────────────────────── */
+@keyframes section-in {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: none; }
+}
+.animate-section-in {
+  animation: section-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.animate-section-in:nth-child(1) { animation-delay: 0.05s; }
+.animate-section-in:nth-child(2) { animation-delay: 0.12s; }
+.animate-section-in:nth-child(3) { animation-delay: 0.19s; }
+.animate-section-in:nth-child(4) { animation-delay: 0.26s; }
+.animate-section-in:nth-child(5) { animation-delay: 0.33s; }
+.animate-section-in:nth-child(6) { animation-delay: 0.40s; }
+
+/* ─── Glassmorphism ────────────────────────────── */
+.glass-card {
+  background: rgba(253, 248, 242, 0.75);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(232, 217, 196, 0.70);
+}
+
+/* ─── Navbar gradient border ────────────────────── */
+.navbar-gradient-border {
+  position: relative;
+}
+.navbar-gradient-border::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(198, 243, 107, 0.6) 30%,
+    rgba(156, 201, 77, 0.8) 50%,
+    rgba(198, 243, 107, 0.6) 70%,
+    transparent 100%
+  );
+}
+
+/* ─── Accent pill label ─────────────────────────── */
+.accent-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 100px;
+  background: rgba(198, 243, 107, 0.18);
+  border: 1px solid rgba(198, 243, 107, 0.45);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #4a6e2a;
+}
+
+/* ─── Section heading accent line ───────────────── */
+.section-accent-line {
+  display: block;
+  width: 36px;
+  height: 3px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, #c6f36b, #9cc94d);
+  margin-top: 8px;
+}
+
+/* ─── Offer card inner shine ────────────────────── */
+@keyframes card-shine {
+  0%   { left: -120%; }
+  60%,
+  100% { left: 140%; }
+}
+.card-shine {
+  position: relative;
+  overflow: hidden;
+}
+.card-shine::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -120%;
+  width: 60%;
+  height: 200%;
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgba(255, 255, 255, 0.18) 50%,
+    transparent 60%
+  );
+  transform: skewX(-15deg);
+  animation: card-shine 5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* ─── Image hover scale container ───────────────── */
+.img-zoom > img,
+.img-zoom > div > img {
+  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.img-zoom:hover > img,
+.img-zoom:hover > div > img {
+  transform: scale(1.06);
+}
+
+/* ─── Category card glow ring ───────────────────── */
+.cat-card {
+  transition: transform 0.3s ease;
+}
+.cat-card:hover {
+  transform: translateY(-3px);
+}
+
+/* ─── Floating label badge ──────────────────────── */
+@keyframes badge-pop {
+  0%   { transform: scale(0.65) rotate(6deg); opacity: 0; }
+  65%  { transform: scale(1.1)  rotate(6deg); opacity: 1; }
+  100% { transform: scale(1)    rotate(6deg); }
+}
+.badge-pop {
+  animation: badge-pop 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) 0.3s both;
+}
+
+/* ─── Star rating sparkle ────────────────────────── */
+@keyframes sparkle {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.5; transform: scale(0.8); }
+}
+.sparkle-star {
+  animation: sparkle 1.6s ease-in-out infinite;
+}
+.sparkle-star:nth-child(2) { animation-delay: 0.2s; }
+.sparkle-star:nth-child(3) { animation-delay: 0.4s; }
+.sparkle-star:nth-child(4) { animation-delay: 0.6s; }
+.sparkle-star:nth-child(5) { animation-delay: 0.8s; }
+
+/* ─── Announcement bar ──────────────────────────── */
+.announcement-bar {
+  background-image: linear-gradient(90deg, #152420, #1e3d32 40%, #2a5040 50%, #1e3d32 60%, #152420);
+  background-size: 300% auto;
+  animation: shimmer-sweep 8s linear infinite;
+}
+
+/* ─── Reduced motion ─────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .promo-marquee-track,
+  .promo-float,
+  .btn-shimmer,
+  .btn-dark-shimmer,
+  .announcement-bar,
+  .card-shine::after,
+  .sparkle-star,
+  .pulse-dot::before {
+    animation: none;
+  }
+  .promo-marquee-track {
+    transform: translateX(0);
+  }
+  .btn-shimmer {
+    background-image: none;
+    background-color: #c6f36b;
+  }
+  .btn-dark-shimmer {
+    background-image: none;
+    background-color: #172c27;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .animate-section-in {
+    animation: none;
+  }
+}
