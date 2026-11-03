@@ -397,9 +397,13 @@ export default async function InvoicePage({ params }: { params: { id: string } }
               Terms and Conditions
             </p>
             <div className="space-y-0.5">
-              {settings.terms.split('\n').filter(Boolean).map((line, i) => (
-                <p key={i} className="text-[11px] text-gray-600">{line}</p>
-              ))}
+              {settings.terms
+                .split(/\r?\n/)
+                .map((line) => line.trim())
+                .filter(Boolean)
+                .map((line, i) => (
+                  <p key={i} className="text-[11px] text-gray-600">{line}</p>
+                ))}
             </div>
           </div>
 

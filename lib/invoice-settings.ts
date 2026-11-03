@@ -38,7 +38,7 @@ export const DEFAULT_INVOICE_SETTINGS: InvoiceSettings = {
   bankBranch: 'Mumbai Main Branch',
   gstRate: 18,
   hsnCode: '4202',
-  terms: '1. Goods once sold cannot be taken back or exchanged.\n2. We are not the manufacturers, we shall stand for warranty as per their terms and conditions.\n3. Subject to local jurisdiction.',
+  terms: '1. Customers may initiate a return within 4 days from the date of delivery.\n2. To qualify for a full refund, items must be returned in their original, unused, and unwashed condition.\n3. We reserve the right to reject returns that show visible signs of wear, tear, or altering.',
   upiId: '',
   upiQrUrl: '',
   signatureUrl: ''
@@ -74,6 +74,16 @@ async function supabase(path: string, init?: RequestInit) {
 type SettingsRow = Record<string, unknown>;
 
 function mapRow(row: SettingsRow): InvoiceSettings {
+  // The original SQL migration seeded the row with this single-line default.
+  // If the DB still has that value (admin hasn't saved their own terms yet),
+  // fall back to the full multi-line TypeScript default so invoices show all terms.
+  const OLD_SQL_DEFAULT = '1. Goods once sold cannot be taken back or exchanged.';
+  const dbTerms = String(row.terms ?? '').trim();
+  const terms =
+    !dbTerms || dbTerms === OLD_SQL_DEFAULT
+      ? DEFAULT_INVOICE_SETTINGS.terms
+      : dbTerms;
+
   return {
     gstin:           String(row.gstin ?? DEFAULT_INVOICE_SETTINGS.gstin),
     pan:             String(row.pan ?? DEFAULT_INVOICE_SETTINGS.pan),
@@ -90,7 +100,7 @@ function mapRow(row: SettingsRow): InvoiceSettings {
     bankBranch:      String(row.bank_branch ?? DEFAULT_INVOICE_SETTINGS.bankBranch),
     gstRate:         Number(row.gst_rate ?? DEFAULT_INVOICE_SETTINGS.gstRate),
     hsnCode:         String(row.hsn_code ?? DEFAULT_INVOICE_SETTINGS.hsnCode),
-    terms:           String(row.terms ?? DEFAULT_INVOICE_SETTINGS.terms),
+    terms,
     upiId:           String(row.upi_id ?? ''),
     upiQrUrl:        String(row.upi_qr_url ?? ''),
     signatureUrl:    String(row.signature_url ?? ''),
