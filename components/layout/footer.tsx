@@ -194,7 +194,7 @@ export default async function Footer() {
               <a
                 aria-label="WhatsApp"
                 className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-[#25d366] transition-all duration-200 ease-out hover:-translate-y-1 hover:scale-110 hover:border-[#25d366]/60 hover:bg-[#25d366]/15 hover:shadow-[0_6px_20px_rgba(37,211,102,0.25)] motion-reduce:transform-none motion-reduce:transition-none"
-                href="https://www.whatsapp.com/"
+                href="https://wa.me/919326569083?text=Hi%2C%20I%20have%20a%20question%20about%20your%20products."
                 rel="noreferrer"
                 target="_blank"
               >
