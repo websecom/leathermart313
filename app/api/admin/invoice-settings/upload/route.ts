@@ -9,8 +9,6 @@ import { NextRequest, NextResponse } from 'next/server';
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
 
-export const runtime = 'nodejs';
-
 function getScwClient() {
   const endpoint = process.env.SCW_ENDPOINT?.replace(/\/+$/, '');
   const region = process.env.SCW_REGION;

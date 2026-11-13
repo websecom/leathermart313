@@ -8,6 +8,7 @@ import { revalidatePath } from 'next/cache';
 import { NextRequest, NextResponse } from 'next/server';
 
 export const runtime = 'nodejs';
+export const dynamic = 'force-dynamic';
 
 const ALLOWED_STATUSES = [
   'PENDING', 'ACTIVE', 'PAID',
