@@ -18,8 +18,7 @@ export const metadata = {
   }
 };
 
-// Cache this page for 1 hour; background revalidation keeps it fresh
-export const revalidate = 3600;
+export const dynamic = 'force-dynamic';
 
 /* ── Trust badges ──────────────────────────────── */
 const TRUST_BADGES = [

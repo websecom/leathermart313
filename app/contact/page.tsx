@@ -2,6 +2,8 @@ import Footer from 'components/layout/footer';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
+export const dynamic = 'force-dynamic';
+
 export const metadata: Metadata = {
   title: 'Contact Us',
   description:

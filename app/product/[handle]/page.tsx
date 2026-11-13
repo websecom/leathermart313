@@ -6,9 +6,11 @@ import Footer from 'components/layout/footer';
 import { Gallery } from 'components/product/gallery';
 import { ProductDescription } from 'components/product/product-description';
 import ProductRecommendations from 'components/product/product-recommendations';
+import { HIDDEN_PRODUCT_TAG } from 'lib/constants';
 import { getProduct } from 'lib/store';
 import type { Image } from 'lib/types';
-import { HIDDEN_PRODUCT_TAG } from 'lib/constants';
+
+export const dynamic = 'force-dynamic';
 
 export async function generateMetadata({
   params

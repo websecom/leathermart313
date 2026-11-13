@@ -6,6 +6,8 @@ import { sorting } from 'lib/constants';
 import { getProductFilterOptions } from 'lib/store';
 import { Suspense } from 'react';
 
+export const dynamic = 'force-dynamic';
+
 export default async function SearchLayout({ children }: { children: React.ReactNode }) {
   const { productTypes, materials, colors, sizes } = await getProductFilterOptions();
 

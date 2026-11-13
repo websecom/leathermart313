@@ -4,6 +4,8 @@ import Prose from 'components/prose';
 import { getPage } from 'lib/store';
 import { notFound } from 'next/navigation';
 
+export const dynamic = 'force-dynamic';
+
 export async function generateMetadata({
   params
 }: {
