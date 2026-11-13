@@ -409,11 +409,38 @@ const collections: Collection[] = [
 const pages: StorePage[] = [
   {
     id: 'about',
-    title: 'About',
+    title: 'About Us',
     handle: 'about',
-    body: '<p>We believe the things you use every day should be thoughtfully made, useful, and made to last.</p><p>This independent storefront is yours to shape. Update the sample catalog in <code>lib/store.ts</code> with your own products, story, and policies.</p>',
-    bodySummary: 'A little about our approach to everyday essentials.',
-    seo: { title: 'About', description: 'Learn more about our approach.' },
+    body: `
+<h2>Who We Are</h2>
+<p>Leather Mart 313 is a family-run leather goods manufacturer based in Amravati, Maharashtra. For over a decade we have been crafting original leather products — bags, wallets, belts, and accessories — directly from our workshop at Shop No. B47, Hazrat Tipu Sultan AMC Market, Walgaon Road.</p>
+<p>We are not a reseller. Every product you see is made by us, which means you get manufacturer quality at honest prices with no middlemen in between.</p>
+
+<h2>Our Craft</h2>
+<p>We work with full-grain and genuine leather sourced from trusted tanneries. Each piece is cut, stitched, and finished by hand in our Amravati workshop. We pay attention to the details that matter — reinforced stitching, solid hardware, and edges that are burnished rather than painted.</p>
+<p>Leather is a natural material that improves with age. The bags and wallets we make are designed to be used every day and to develop a rich patina over years of use. We build them to outlast trends.</p>
+
+<h2>Made in Amravati</h2>
+<p>We are proudly local. Our workshop is in Transport Nagar, Amravati — a city with a long tradition of leather craft. When you buy from Leather Mart 313 you are supporting a small family business and skilled artisans from our community.</p>
+<p>You are always welcome to visit us in person, see the workshop, and pick your piece directly.</p>
+
+<h2>Why Buy From Us</h2>
+<ul>
+  <li><strong>Direct from manufacturer</strong> — no distributor markup, genuine products every time.</li>
+  <li><strong>Honest materials</strong> — we tell you exactly what leather we use and how it is made.</li>
+  <li><strong>Built to last</strong> — we stand behind our work. If something is wrong, we fix it.</li>
+  <li><strong>Personal service</strong> — call or WhatsApp us directly at 093265 69083. You speak to the people who made your product.</li>
+</ul>
+
+<h2>Visit Us</h2>
+<p>Shop No. B47, Hazrat Tipu Sultan AMC Market, Walgaon Rd, Jameel Colony, Transport Nagar, Amravati, Maharashtra 444601.</p>
+<p>We are open seven days a week. Give us a call before you visit and we will make sure the full range is out for you.</p>
+    `.trim(),
+    bodySummary: 'Leather Mart 313 is a family-run leather goods manufacturer in Amravati, Maharashtra — crafting original bags, wallets, and accessories directly from our workshop since over a decade.',
+    seo: {
+      title: 'About Us — Leather Mart 313',
+      description: 'Leather Mart 313 is a family-run leather goods manufacturer based in Amravati, Maharashtra. Original leather products, made by hand, direct from our workshop.'
+    },
     createdAt: updatedAt,
     updatedAt
   },
