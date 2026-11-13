@@ -22,10 +22,10 @@ export default async function Navbar() {
           </Suspense>
         </div>
         <div className="flex w-full items-center">
-          <div className="flex min-w-0 flex-1 items-center">
-            <Link href="/" className="group mr-3 flex w-full items-center gap-2.5 md:w-auto lg:mr-9">
+          <div className="flex min-w-0 flex-1 items-center overflow-hidden">
+            <Link href="/" className="group mr-3 flex min-w-0 items-center gap-2 md:w-auto lg:mr-9">
               <LogoSquare size="sm" />
-              <div className="flex-none text-[11px] font-black uppercase tracking-[0.18em] text-[#17211f] transition-colors group-hover:text-[#4a8030]">
+              <div className="truncate text-[11px] font-black uppercase tracking-[0.18em] text-[#17211f] transition-colors group-hover:text-[#4a8030]">
                 {siteName}
               </div>
             </Link>
@@ -54,9 +54,11 @@ export default async function Navbar() {
             </Suspense>
           </div>
           <div className="ml-auto flex flex-none items-center gap-3 justify-end">
-            <Suspense fallback={null}>
-              <AuthControls />
-            </Suspense>
+            <div className="hidden md:flex md:items-center md:gap-3">
+              <Suspense fallback={null}>
+                <AuthControls />
+              </Suspense>
+            </div>
             <Suspense fallback={<OpenCart />}>
               <Cart />
             </Suspense>
