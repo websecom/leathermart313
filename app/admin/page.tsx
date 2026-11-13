@@ -4,6 +4,8 @@ import { getOrderStats, isOrdersDatabaseConfigured } from 'lib/orders-storage';
 import { getAllCollections, getProducts } from 'lib/store';
 import Link from 'next/link';
 
+export const runtime = 'nodejs';
+export const dynamic = 'force-dynamic';
 export const metadata = {
   title: 'Admin dashboard',
   description: 'Edit products and inventory for the storefront.'

@@ -3,6 +3,7 @@ import { saveShippingSettings } from 'lib/coupons';
 import { NextResponse } from 'next/server';
 
 export const runtime = 'nodejs';
+export const dynamic = 'force-dynamic';
 
 export async function PUT(request: Request) {
   if (!(await isCurrentUserAdmin())) {

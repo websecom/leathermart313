@@ -1,9 +1,10 @@
 import { isCurrentUserAdmin } from 'lib/admin-auth';
 import { getProducts } from 'lib/store';
-import { seedProductEmbeddings, getEmbeddingCount } from 'lib/vector-search';
+import { getEmbeddingCount, seedProductEmbeddings } from 'lib/vector-search';
 import { NextResponse } from 'next/server';
 
 export const runtime = 'nodejs';
+export const dynamic = 'force-dynamic';
 export const maxDuration = 60; // embeddings take a few seconds per product
 
 export async function POST() {

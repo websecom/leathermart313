@@ -3,6 +3,7 @@ import { createCoupon, getAllCoupons } from 'lib/coupons';
 import { NextResponse } from 'next/server';
 
 export const runtime = 'nodejs';
+export const dynamic = 'force-dynamic';
 
 export async function GET() {
   if (!(await isCurrentUserAdmin())) return NextResponse.json({ error: 'Admin access required.' }, { status: 401 });

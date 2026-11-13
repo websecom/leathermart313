@@ -7,6 +7,9 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
 export const runtime = 'nodejs';
+export const dynamic = 'force-dynamic';
+
+export const runtime = 'nodejs';
 export const metadata = {
   title: 'Order detail',
   description: 'View a customer order.'

@@ -1,10 +1,13 @@
-import { isCurrentUserAdmin } from 'lib/admin-auth';
-import { isScwStorageConfigured, getScwPublicUrl } from 'lib/scw-storage';
 import {
-  S3Client,
-  PutObjectCommand
+    PutObjectCommand,
+    S3Client
 } from '@aws-sdk/client-s3';
+import { isCurrentUserAdmin } from 'lib/admin-auth';
+import { getScwPublicUrl, isScwStorageConfigured } from 'lib/scw-storage';
 import { NextRequest, NextResponse } from 'next/server';
+
+export const runtime = 'nodejs';
+export const dynamic = 'force-dynamic';
 
 export const runtime = 'nodejs';
 

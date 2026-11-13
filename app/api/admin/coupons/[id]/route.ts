@@ -1,8 +1,9 @@
 import { isCurrentUserAdmin } from 'lib/admin-auth';
-import { updateCoupon, deleteCoupon } from 'lib/coupons';
+import { deleteCoupon, updateCoupon } from 'lib/coupons';
 import { NextRequest, NextResponse } from 'next/server';
 
 export const runtime = 'nodejs';
+export const dynamic = 'force-dynamic';
 
 export async function PATCH(
   request: NextRequest,

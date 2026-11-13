@@ -1,11 +1,14 @@
-import {
-  saveCollectionOverride,
-  deleteCollectionOverride,
-  type CollectionOverride
-} from 'lib/catalog-storage';
 import { isCurrentUserAdmin } from 'lib/admin-auth';
-import { NextResponse } from 'next/server';
+import {
+    deleteCollectionOverride,
+    saveCollectionOverride,
+    type CollectionOverride
+} from 'lib/catalog-storage';
 import { revalidatePath } from 'next/cache';
+import { NextResponse } from 'next/server';
+
+export const runtime = 'nodejs';
+export const dynamic = 'force-dynamic';
 
 export const runtime = 'nodejs';
 

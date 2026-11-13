@@ -10,6 +10,8 @@ import { getOrdersByEmail, updateOrderDetails } from 'lib/orders-storage';
 import { revalidatePath } from 'next/cache';
 import { NextRequest, NextResponse } from 'next/server';
 
+export const dynamic = 'force-dynamic';
+
 export const runtime = 'nodejs';
 
 // Orders that can no longer be edited (already in transit or closed)

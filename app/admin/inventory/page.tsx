@@ -13,6 +13,7 @@ import { getEmbeddingCount } from 'lib/vector-search';
 import Link from 'next/link';
 
 export const runtime = 'nodejs';
+export const dynamic = 'force-dynamic';
 export const metadata = {
   title: 'Inventory management',
   description: 'Restricted product and inventory management.'

@@ -7,6 +7,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 export const runtime = 'nodejs';
+export const dynamic = 'force-dynamic';
+
+export const runtime = 'nodejs';
 export const metadata = {
   title: 'Products',
   description: 'Manage your storefront product catalog.'

@@ -3,6 +3,7 @@ import { getOrders, getOrderStats, isOrdersDatabaseConfigured } from 'lib/orders
 import Link from 'next/link';
 
 export const runtime = 'nodejs';
+export const dynamic = 'force-dynamic';
 export const metadata = {
   title: 'Orders',
   description: 'View customer orders and payment status.'
