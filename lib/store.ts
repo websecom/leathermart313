@@ -458,11 +458,41 @@ const pages: StorePage[] = [
     id: 'privacy-policy',
     title: 'Privacy Policy',
     handle: 'privacy-policy',
-    body: '<p><strong>Store owner: complete and review this policy before launch.</strong> Replace bracketed prompts with your business details and confirm that this policy reflects your actual practices and applicable law.</p><h2>Information we collect</h2><p>When you use the store, information may be provided directly by you (for example, when you contact us) or collected as needed to operate the site. This demo currently uses an essential HTTP-only cookie to remember cart contents. It does not currently provide customer accounts or collect newsletter signups.</p><p>Before accepting orders, explain what personal and order information your store collects, why it is needed, and what service providers process it. Include analytics, advertising, payment, and hosting providers if you use them.</p><h2>How we use information</h2><p>Describe how information is used to operate the store, respond to requests, process orders, prevent fraud, and meet legal obligations. Do not use customer information for unrelated marketing without an appropriate legal basis and any required consent.</p><h2>Sharing and retention</h2><p>List the service providers and other parties that receive personal information, the reasons for sharing, and how long information is retained. Explain any international transfers that apply to your business.</p><h2>Your choices and rights</h2><p>Depending on where you live, you may have rights to access, correct, delete, or receive a copy of your personal information, or to object to certain processing. Add instructions for submitting requests and any applicable appeal process.</p><h2>Cookies and contact</h2><p>Explain the cookies and similar technologies your live store uses and how visitors can manage them. For privacy questions or requests, contact <strong>[add your privacy contact email and business address]</strong>.</p><p>Effective date: <strong>[add date]</strong>.</p>',
-    bodySummary: 'Learn what information the store handles and the choices available to you.',
+    body: `
+<p>This Privacy Policy explains how Leather Mart 313 ("we", "us", "our") collects, uses, and protects your personal information when you visit leathermart313.in or place an order with us. By using this website you agree to this policy.</p>
+
+<h2>Information We Collect</h2>
+<p>When you place an order or create an account, we collect your name, email address, phone number, and delivery address. We also collect your order history and payment confirmation details (we do not store card numbers — payments are processed securely by Cashfree Payments). We use an essential cookie to remember your shopping cart between visits.</p>
+
+<h2>How We Use Your Information</h2>
+<ul>
+  <li>To process and fulfil your orders and send order confirmations.</li>
+  <li>To contact you about your order status, delivery, or any issues.</li>
+  <li>To respond to your enquiries and provide customer support.</li>
+  <li>To improve our website and product offerings.</li>
+</ul>
+<p>We do not sell, rent, or share your personal information with third parties for marketing purposes.</p>
+
+<h2>Service Providers</h2>
+<p>We use the following trusted third-party services to operate our store: Cashfree Payments (payment processing), Supabase (order and customer data storage), Vercel (website hosting), and Clerk (account authentication). Each provider handles data under their own privacy policies and applicable law.</p>
+
+<h2>Data Retention</h2>
+<p>We retain order and customer information for as long as necessary to fulfil orders, comply with legal obligations, and resolve disputes. You may request deletion of your account and associated data by contacting us at the details below.</p>
+
+<h2>Your Rights</h2>
+<p>You have the right to access, correct, or request deletion of the personal information we hold about you. To make a request, contact us at <strong>info@leathermart313.com</strong> or call <strong>093265 69083</strong>.</p>
+
+<h2>Cookies</h2>
+<p>We use a single essential cookie to maintain your shopping cart. No advertising or tracking cookies are used. You can disable cookies in your browser settings, but this may affect cart functionality.</p>
+
+<h2>Contact</h2>
+<p>Leather Mart 313, Shop No. B47, Hazrat Tipu Sultan AMC Market, Walgaon Rd, Amravati, Maharashtra 444601. Email: info@leathermart313.com · Phone: 093265 69083.</p>
+<p><em>Effective date: November 2026.</em></p>
+    `.trim(),
+    bodySummary: 'How Leather Mart 313 collects, uses, and protects your personal information.',
     seo: {
-      title: 'Privacy Policy',
-      description: 'How we handle personal information and privacy requests.'
+      title: 'Privacy Policy — Leather Mart 313',
+      description: 'How Leather Mart 313 collects, uses and protects your personal information when you shop with us.'
     },
     createdAt: updatedAt,
     updatedAt
@@ -471,9 +501,40 @@ const pages: StorePage[] = [
     id: 'terms-of-service',
     title: 'Terms of Service',
     handle: 'terms-of-service',
-    body: '<p><strong>Store owner: complete and review these terms before launch.</strong> Fill in bracketed prompts, confirm the terms match your actual checkout and fulfillment practices, and get appropriate legal review.</p><h2>About these terms</h2><p>These terms apply to your use of this website, operated by <strong>[add your legal business name and address]</strong>. By using the site, you agree to the terms applicable in your location. If you do not agree, do not use the site.</p><h2>Products and pricing</h2><p>We aim to show product descriptions, images, availability, and prices accurately. Colors may appear differently on different displays. Prices, taxes, shipping charges, and availability must be confirmed at checkout before an order is accepted. We may correct errors and cancel an order where permitted by law.</p><h2>Orders and payment</h2><p>An order is accepted only when we send an order confirmation. Add the payment methods you accept and explain when payment is taken. This demo storefront checkout is a preview and does not currently accept payment or place orders.</p><h2>Shipping, returns, and acceptable use</h2><p>Shipping and return conditions are described in our <a href="/shipping-delivery">Shipping &amp; Delivery</a> and <a href="/returns-refunds">Returns &amp; Refunds</a> policies. Do not misuse the site, interfere with its operation, or use it in violation of law.</p><h2>Liability and changes</h2><p>Nothing in these terms limits rights or remedies that cannot be limited under applicable law. Add any lawful limitations, complaint process, governing law, and dispute-resolution details applicable to your business: <strong>[complete after legal review]</strong>. We may update these terms by publishing a revised version with an updated effective date.</p><p>Effective date: <strong>[add date]</strong>. Questions: <strong>[add contact email]</strong>.</p>',
-    bodySummary: 'Terms for using the storefront and placing orders.',
-    seo: { title: 'Terms of Service', description: 'Terms and conditions for using our store.' },
+    body: `
+<p>These Terms of Service govern your use of leathermart313.in and any purchase you make from Leather Mart 313, Shop No. B47, Hazrat Tipu Sultan AMC Market, Walgaon Rd, Jameel Colony, Transport Nagar, Amravati, Maharashtra 444601. By placing an order you agree to these terms.</p>
+
+<h2>Products and Pricing</h2>
+<p>All products are handcrafted leather goods manufactured directly by us. We make every effort to display accurate images, descriptions, and prices. Leather is a natural material — grain patterns, texture, and colour may vary slightly between pieces. All prices are in Indian Rupees (₹) and inclusive of applicable taxes unless stated otherwise.</p>
+
+<h2>Orders and Payment</h2>
+<p>An order is confirmed when you receive a payment confirmation from Cashfree Payments and an order confirmation from us. We accept payments via UPI, debit/credit cards, net banking, and wallets through Cashfree. We reserve the right to cancel an order if a product becomes unavailable or if a pricing error is identified, in which case a full refund will be issued.</p>
+
+<h2>Shipping and Delivery</h2>
+<p>Please refer to our <a href="/shipping-delivery">Shipping &amp; Delivery</a> policy for full details on delivery timelines, charges, and tracking.</p>
+
+<h2>Returns and Refunds</h2>
+<p>Please refer to our <a href="/returns-refunds">Returns &amp; Refunds</a> policy. Refunds are only available within 4 days of receiving your order and are subject to the conditions set out in that policy.</p>
+
+<h2>Intellectual Property</h2>
+<p>All content on this website — including images, text, logos, and product descriptions — is owned by or licensed to Leather Mart 313. You may not reproduce or use any content without our prior written permission.</p>
+
+<h2>Limitation of Liability</h2>
+<p>To the fullest extent permitted by law, Leather Mart 313 is not liable for any indirect, incidental, or consequential loss arising from the use of this website or our products. Our total liability for any claim shall not exceed the amount paid for the product in question.</p>
+
+<h2>Governing Law</h2>
+<p>These terms are governed by the laws of India. Any disputes shall be subject to the exclusive jurisdiction of the courts in Amravati, Maharashtra.</p>
+
+<h2>Changes to These Terms</h2>
+<p>We may update these terms from time to time. The current version will always be available on this page. Continued use of the website after changes constitutes acceptance of the updated terms.</p>
+
+<p><em>Effective date: November 2026. Questions: info@leathermart313.com · 093265 69083.</em></p>
+    `.trim(),
+    bodySummary: 'Terms and conditions for using leathermart313.in and placing orders.',
+    seo: {
+      title: 'Terms of Service — Leather Mart 313',
+      description: 'Terms and conditions for using the Leather Mart 313 website and placing orders.'
+    },
     createdAt: updatedAt,
     updatedAt
   },
@@ -481,11 +542,38 @@ const pages: StorePage[] = [
     id: 'shipping-delivery',
     title: 'Shipping & Delivery',
     handle: 'shipping-delivery',
-    body: '<p><strong>Store owner: add your real shipping information before accepting orders.</strong> Shipping prices, carriers, delivery estimates, and service areas depend on your business and must be accurate at checkout.</p><h2>Where we ship</h2><p>We currently ship to <strong>[list countries or regions served]</strong>. We do not ship to <strong>[list exclusions, if any]</strong>.</p><h2>Processing and delivery estimates</h2><p>Orders are typically prepared within <strong>[add processing time]</strong>. Estimated delivery after dispatch is <strong>[add estimates by region and service]</strong>. Estimates are not guarantees; carrier delays, customs, weather, or other events may affect delivery.</p><h2>Shipping charges and tracking</h2><p>Available shipping methods and charges are shown at checkout before purchase. Add details about free-shipping thresholds and when tracking information is sent: <strong>[complete shipping details]</strong>.</p><h2>Customs, address changes, and delivery issues</h2><p>For international orders, explain who pays import duties and taxes. Contact us promptly about an incorrect address, delayed parcel, or delivery issue at <strong>[add support email]</strong>. Add any address-change or undeliverable-parcel rules here.</p><p>This demo storefront does not currently accept or fulfill orders.</p>',
-    bodySummary: 'Shipping regions, charges, processing times, and delivery information.',
+    body: `
+<p>Leather Mart 313 ships all orders across India from our workshop in Amravati, Maharashtra. Here is everything you need to know about how we get your order to you.</p>
+
+<h2>Processing Time</h2>
+<p>Orders are processed within <strong>1–2 business days</strong> of payment confirmation. For custom or made-to-order pieces, processing may take up to 5 business days — we will confirm this at the time of order.</p>
+
+<h2>Delivery Estimates</h2>
+<ul>
+  <li><strong>Maharashtra:</strong> 2–4 business days after dispatch.</li>
+  <li><strong>Rest of India:</strong> 4–7 business days after dispatch.</li>
+  <li><strong>Remote areas:</strong> Up to 10 business days.</li>
+</ul>
+<p>These are estimates only. Actual delivery times may vary due to courier delays, public holidays, or other circumstances outside our control.</p>
+
+<h2>Shipping Charges</h2>
+<p>Shipping charges, if applicable, are calculated and displayed at checkout before you complete your order. Orders above the free-shipping threshold qualify for free delivery — the current threshold is shown on the checkout page.</p>
+
+<h2>Tracking Your Order</h2>
+<p>Once your order is dispatched, we will send you the tracking number and courier details via WhatsApp or email. You can also check your order status by logging into your account and visiting My Orders.</p>
+
+<h2>Delivery Issues</h2>
+<p>If your order has not arrived within the estimated timeframe, or if the package appears damaged on delivery, please contact us immediately at <strong>093265 69083</strong> or <strong>info@leathermart313.com</strong>. Do not accept a visibly damaged package — refuse delivery and contact us right away.</p>
+
+<h2>Address Changes</h2>
+<p>If you need to update your delivery address after placing an order, contact us as soon as possible. We can update the address before dispatch, but we cannot reroute a package once it has been handed to the courier.</p>
+
+<p><em>Questions? Call or WhatsApp us at 093265 69083.</em></p>
+    `.trim(),
+    bodySummary: 'Delivery timelines, shipping charges, tracking, and what to do if something goes wrong.',
     seo: {
-      title: 'Shipping & Delivery',
-      description: 'Shipping regions, costs, and delivery estimates.'
+      title: 'Shipping & Delivery — Leather Mart 313',
+      description: 'Shipping information for Leather Mart 313 — delivery timelines, charges, tracking and delivery FAQs.'
     },
     createdAt: updatedAt,
     updatedAt
@@ -494,9 +582,54 @@ const pages: StorePage[] = [
     id: 'returns-refunds',
     title: 'Returns & Refunds',
     handle: 'returns-refunds',
-    body: '<p><strong>Store owner: set a return policy that complies with the laws where you sell before accepting orders.</strong> Replace each bracketed prompt with your actual process and timelines.</p><h2>Return window and eligibility</h2><p>Eligible items may be returned within <strong>[add return window and when it begins]</strong>. State the condition required, whether tags and original packaging must be included, and any exclusions. Any exclusions must comply with applicable consumer-protection laws.</p><h2>How to request a return</h2><p>Contact <strong>[add returns email or return portal]</strong> with your order number and reason for return. Wait for return instructions before sending an item. Add who pays return shipping and the return address or process here.</p><h2>Refunds and exchanges</h2><p>After an approved return is received and inspected, explain when refunds are issued, which payment method is refunded, and whether original shipping charges are refundable. Add your exchange and damaged-or-incorrect-item process.</p><h2>Cancellation and local rights</h2><p>Explain how to request an order cancellation and any applicable conditions. This policy does not remove consumer rights that cannot be excluded under applicable law.</p><p>This demo storefront checkout does not currently place orders or issue refunds. Questions: <strong>[add support email]</strong>.</p>',
-    bodySummary: 'How to request a return, exchange, or refund.',
-    seo: { title: 'Returns & Refunds', description: 'Return, exchange, and refund information.' },
+    body: `
+<p>At Leather Mart 313 we take pride in the quality of every product we make. If something is not right with your order, we want to make it right. Please read our return and refund policy carefully before initiating a return.</p>
+
+<h2>Return Window</h2>
+<p>Returns are accepted within <strong>4 days of the date you receive your order</strong>. Requests made after 4 days of delivery will not be eligible for a return or refund.</p>
+
+<h2>Eligibility Conditions</h2>
+<p>To qualify for a return, the item must meet all of the following conditions:</p>
+<ul>
+  <li>The return request is raised within 4 days of delivery.</li>
+  <li>The item is unused, unworn, and in its original condition.</li>
+  <li>The item is returned in its original packaging with all tags intact.</li>
+  <li>The item has not been altered, washed, or damaged after delivery.</li>
+</ul>
+
+<h2>Non-Returnable Items</h2>
+<ul>
+  <li>Items that show signs of use, wear, or damage caused after delivery.</li>
+  <li>Custom or personalised products made to your specifications.</li>
+  <li>Items returned after the 4-day window.</li>
+  <li>Sale or clearance items (unless defective).</li>
+</ul>
+
+<h2>How to Initiate a Return</h2>
+<ol>
+  <li>Contact us within 4 days of delivery on <strong>093265 69083</strong> (WhatsApp or call) or email <strong>info@leathermart313.com</strong>.</li>
+  <li>Share your order number and clear photographs of the item and the reason for return.</li>
+  <li>Wait for our team to review and approve the return request.</li>
+  <li>Once approved, ship the item back to us at the address provided. Return shipping costs are borne by the customer unless the item is defective or incorrectly sent.</li>
+</ol>
+
+<h2>Refunds</h2>
+<p>Once we receive and inspect the returned item, we will notify you of approval or rejection within 2 business days. If approved, the refund will be processed to your original payment method within <strong>5–7 business days</strong>. The exact timeline depends on your bank or payment provider.</p>
+<p>Original shipping charges are non-refundable unless the return is due to a defective or incorrect item.</p>
+
+<h2>Defective or Wrong Items</h2>
+<p>If you receive a defective product or the wrong item, contact us immediately. We will arrange a free return pickup and either replace the item or issue a full refund — your choice.</p>
+
+<h2>Cancellations</h2>
+<p>Orders can be cancelled before dispatch. Once an order has been dispatched, it cannot be cancelled — the returns process above applies. To request a cancellation, contact us as soon as possible at 093265 69083.</p>
+
+<p><em>Questions? Call or WhatsApp us at 093265 69083 or email info@leathermart313.com.</em></p>
+    `.trim(),
+    bodySummary: 'Returns accepted within 4 days of delivery. Items must be unused and in original condition.',
+    seo: {
+      title: 'Returns & Refunds — Leather Mart 313',
+      description: 'Leather Mart 313 returns and refund policy — returns accepted within 4 days of delivery for unused items in original condition.'
+    },
     createdAt: updatedAt,
     updatedAt
   },
@@ -504,11 +637,34 @@ const pages: StorePage[] = [
     id: 'disclaimer',
     title: 'Disclaimer',
     handle: 'disclaimer',
-    body: '<p><strong>Store owner: review this page for your business and local law before launch.</strong> This general information is not a substitute for legal advice.</p><h2>Product information</h2><p>We make reasonable efforts to describe products accurately, but product images, colors, measurements, and availability may vary. Confirm important product details before purchasing and contact us if you need clarification.</p><h2>Website information</h2><p>Content on this site is provided for general informational purposes. To the extent permitted by applicable law, we do not guarantee that all site content is complete, current, or error-free. This does not limit any rights or remedies that cannot legally be limited.</p><h2>External links</h2><p>Links to third-party sites are provided for convenience. We do not control their content or privacy practices; review their terms and policies before using them.</p><h2>Demo storefront notice</h2><p>This independent storefront currently uses sample catalog data. Checkout is a preview and does not accept payment or place orders. Product offers, inventory, shipping details, and policies must be replaced with verified business information before launch.</p><p>Questions: <strong>[add contact email]</strong>.</p>',
-    bodySummary: 'Important information about site content and the demo storefront.',
+    body: `
+<p>The information on this website (leathermart313.in) is provided by Leather Mart 313 for general informational and commercial purposes. By using this website you accept this disclaimer in full.</p>
+
+<h2>Product Information</h2>
+<p>All products sold by Leather Mart 313 are handcrafted from genuine leather. Because leather is a natural material, every piece is unique — grain patterns, texture, and colour tone may vary slightly from product photographs. These variations are not defects; they are characteristics of authentic leather.</p>
+<p>We make every reasonable effort to ensure product descriptions, images, dimensions, and pricing are accurate. However, we cannot guarantee that your device screen displays colours exactly as they appear in person. If you have specific questions about a product before purchasing, please contact us.</p>
+
+<h2>Pricing and Availability</h2>
+<p>All prices are in Indian Rupees (₹). Product availability and prices are subject to change without notice. We reserve the right to correct pricing errors and to limit or refuse orders where appropriate.</p>
+
+<h2>Website Content</h2>
+<p>Content on this website is provided in good faith and for general information only. We do not warrant that the website will be uninterrupted, error-free, or free from viruses. We are not liable for any loss or damage arising from your use of the website or reliance on its content.</p>
+
+<h2>External Links</h2>
+<p>This website may contain links to third-party websites (such as payment gateways or social media). These links are provided for convenience only. We have no control over the content or practices of external sites and accept no responsibility for them. Visiting external links is at your own risk.</p>
+
+<h2>Limitation of Liability</h2>
+<p>To the fullest extent permitted by Indian law, Leather Mart 313 shall not be liable for any direct, indirect, incidental, or consequential damages arising from the use of this website, the purchase of our products, or reliance on any information provided here. Our liability is limited to the amount paid for the specific product giving rise to the claim.</p>
+
+<h2>Contact</h2>
+<p>If you have any questions about this disclaimer, please contact us at <strong>info@leathermart313.com</strong> or call <strong>093265 69083</strong>.</p>
+<p>Leather Mart 313, Shop No. B47, Hazrat Tipu Sultan AMC Market, Walgaon Rd, Amravati, Maharashtra 444601.</p>
+<p><em>Last updated: November 2026.</em></p>
+    `.trim(),
+    bodySummary: 'Important information about product variations, pricing, website content, and liability.',
     seo: {
-      title: 'Disclaimer',
-      description: 'Important information about our website and content.'
+      title: 'Disclaimer — Leather Mart 313',
+      description: 'Disclaimer for leathermart313.in covering product information, pricing, website content, and limitation of liability.'
     },
     createdAt: updatedAt,
     updatedAt
