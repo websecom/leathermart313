@@ -2,7 +2,7 @@ const Price = ({
   amount,
   compareAtAmount,
   className,
-  currencyCode = 'USD'
+  currencyCode = 'INR'
 }: {
   amount: string;
   compareAtAmount?: string;

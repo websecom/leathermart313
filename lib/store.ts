@@ -11,7 +11,7 @@ import type {
 } from 'lib/types';
 
 const updatedAt = '2026-10-12T00:00:00.000Z';
-const currencyCode = 'USD';
+const currencyCode = 'INR';
 
 const productColors: Record<string, string[]> = {
   Jackets: ['Olive', 'Black', 'Sand'],
