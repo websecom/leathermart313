@@ -37,8 +37,23 @@ export default async function OrderSuccessPage({
     status = await getCashfreeOrderStatus(orderId);
   } catch (error) {
     console.error('[order-success] Failed to fetch order status:', error);
-    // If we can't verify, show pending — the webhook will update the order status
     status = 'PENDING';
+  }
+
+  // If Cashfree confirms payment, update the DB immediately — don't wait for webhook.
+  // This handles cases where the webhook is delayed or not yet configured.
+  if (isOrdersDatabaseConfigured()) {
+    try {
+      if (status === 'PAID') {
+        await updateOrderStatus(orderId, 'PAID', status);
+      } else if (status === 'ACTIVE' || status === 'PENDING') {
+        // Leave as PENDING — webhook will update when payment completes
+      } else if (status === 'CANCELLED' || status === 'TERMINATED' || status === 'EXPIRED') {
+        await updateOrderStatus(orderId, 'FAILED', status);
+      }
+    } catch (dbError) {
+      console.error('[order-success] Failed to update order status in DB:', dbError);
+    }
   }
 
   return <OrderMessage status={status} orderId={orderId} />;
